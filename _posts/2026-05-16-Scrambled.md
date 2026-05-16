@@ -6,6 +6,8 @@ categories: [HackTheBox, Windows, Medium]
 tags: [ActiveDirectory, KerberosAuth, SilverTicketAttack, Web, UserAsPass, Fuzzing, Kerberoasting, UserEnum, MSSQL, SeImpersonatePrivilege, GodPotato, nc]
 ---
 
+Scrambled es una máquina de Hack The Box (Windows, dificultad Media) centrada en un entorno de Active Directory donde el protocolo NTLM está completamente deshabilitado, forzando el uso exclusivo de Kerberos. El acceso inicial se logra tras enumerar la web corporativa, obtener credenciales del usuario ksimpson y realizar un ataque de Kerberoasting contra la cuenta SqlSvc. Al no poder iniciar sesión de forma convencional, la intrusión requiere forjar un Silver Ticket para comprometer el servicio MSSQL y ganar una consola remota. Finalmente, la escalada de privilegios a SYSTEM se realiza mediante ingeniería inversa de un binario .NET personalizado, explotando una vulnerabilidad de deserialización insegura con BinaryFormatter.
+
 # Reconocimiento Inicial
 **En esta seccion hago un ping para ver el ttl y si tenemos conexion a la maquina.**
 
